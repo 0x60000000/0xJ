@@ -16,7 +16,7 @@ enum TitleId : uint32_t
 {
     Title_Dashboard = 0xFFFE07D1,
     Title_IW3       = 0x415607E6,
-	  Title_IW4		    = 0x41560817,
+	Title_IW4		= 0x41560817,
 };
 
 // Imports
