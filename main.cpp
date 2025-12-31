@@ -32,26 +32,24 @@ DWORD WINAPI MonitorTitleThread(void*)
             lastTitleId = current;
 
             switch (current)
-            {
+			{
             case Title_Dashboard:
 				if (XNotifyQueueUI)
 					XNotifyQueueUI(0, 0, XNOTIFY_SYSTEM, L"Dashboard", nullptr);
 				break;
 
             case Title_IW3:
-                if (XNotifyQueueUI)
-					XNotifyQueueUI(0, 0, XNOTIFY_SYSTEM, L"IW3", nullptr);
+				IW3::Initialize();
                 break;
 
-			 case Title_IW4:
-                if (XNotifyQueueUI)
-					XNotifyQueueUI(0, 0, XNOTIFY_SYSTEM, L"IW4", nullptr);
-                break;
-            }
-        }
+			case Title_IW4:
+				IW4::Initialize();
+				break;
+			}
+		}
 
         Sleep(250);
-    }
+	}
 
     return 0;
 }
